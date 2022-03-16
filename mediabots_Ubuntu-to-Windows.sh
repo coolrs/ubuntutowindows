@@ -36,9 +36,9 @@ link1_status=$(curl -Is https://software-download.microsoft.com/download/pr/1776
 link2_status=$(curl -Is https://software-download.microsoft.com/download/pr/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso | grep HTTP | cut -f2 -d" ")
 #sudo wget -P /mediabots https://software-download.microsoft.com/download/pr/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso # Windows Server 2016 
 if [ $link1_status = "200" ] ; then 
-	sudo wget -O /mediabots/WS2016.ISO https://ia903105.us.archive.org/33/items/server2019-Linggahosting.com/WS2016.ISO
+	sudo wget -O /mediabots/WS2016.ISO https://software-download.microsoft.com/download/pr/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso
 elif [ $link2_status = "200" -o $link2_status = "301" -o $link2_status = "302" ] ; then 
-	sudo wget -P /mediabots https://ia803103.us.archive.org/21/items/windowsserver2016datacenterevaluationcopy/Windows_Server_2016_Datacenter%28EVALUATION-copy%29.ISO
+	sudo wget -P /mediabots https://software-download.microsoft.com/download/pr/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso
 else
 	echo -e "${RED}[Error]${NC} ${YELLOW}Sorry! None of Windows OS image urls are available , please report about this issue on Github page : ${NC}https://github.com/mediabots/Linux-to-Windows-with-QEMU"
 	echo "Exiting.."
